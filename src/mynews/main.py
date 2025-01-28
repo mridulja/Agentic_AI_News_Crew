@@ -22,10 +22,10 @@ def run():
     }
 
     inputs_array = [
-        {'topic': 'Upcoming US market earnings reports', 'current_year': str(datetime.now().year), 'date': str(datetime.now().strftime("%Y-%m-%d"))},
-        {'topic': 'AI news and updates', 'current_year': str(datetime.now().year), 'date': str(datetime.now().strftime("%Y-%m-%d"))},
-        {'topic': 'Nonprofit news', 'current_year': str(datetime.now().year), 'date': str(datetime.now().strftime("%Y-%m-%d"))},
-        {'topic': 'Best stocks opportunities', 'current_year': str(datetime.now().year), 'date': str(datetime.now().strftime("%Y-%m-%d"))}
+        {'topic': 'Top upcoming US market earnings this week', 'current_year': str(datetime.now().year), 'date': str(datetime.now().strftime("%Y-%m-%d"))},
+        {'topic': 'Fitness News', 'current_year': str(datetime.now().year), 'date': str(datetime.now().strftime("%Y-%m-%d"))},
+        {'topic': 'Crypto Updates', 'current_year': str(datetime.now().year), 'date': str(datetime.now().strftime("%Y-%m-%d"))},
+        {'topic': 'Top undervalued stocks', 'current_year': str(datetime.now().year), 'date': str(datetime.now().strftime("%Y-%m-%d"))}
     ]
 
     for inputs in inputs_array:

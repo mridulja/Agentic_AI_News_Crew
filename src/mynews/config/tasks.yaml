@@ -41,5 +41,5 @@ file_writer_task:
   description: >
     Write the news article to a file
   expected_output: >
-    A well written news article with all information from the previous task into a file named news/{topic}_news_article_{date}.md.
+    A well written news article with all information from the previous task into a file named mynews/news/{topic}_news_article_{date}.md.
   agent: file_writer 
