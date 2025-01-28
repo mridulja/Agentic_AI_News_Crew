@@ -1,0 +1,45 @@
+retrieve_news_task:
+  description: >
+    Conduct a thorough research about {topic}
+    Make sure you find any interesting and relevant information given
+    the current year is {current_year} and current date is {date}.
+  expected_output: >
+    A list with 10 websites with most relevant information about {topic}
+  agent: retrieve_news
+
+website_scraper_task:
+  description: >
+    Scrape the websites you found and extract the most relevant information from the websites and return it in a structured format.
+  expected_output: >
+    A fully scraped webpage with all the relevant and important information with facts, figures in a structured format.
+  agent: website_scraper
+
+ai_news_writer_task:
+  description: >
+    You take the input from the previous task and elaborate the information from the websites into full fledged and detailed news article in markdown format
+    You synthesize the received information and work on the article with key points and facts, provide detailed breakdown of the information and key findings as well.
+    You add a podcast like touch to the article, with a conversational tone and style, in some parts of the article, without over doing this. 
+    Remember, its not a podcast, its a educational, elaborate and detailed article on the given topic of {topic}.
+    Do not start the article "As we approach 2025," or "As we approach {current_year}," or "As we approach {date},". Use your own words to start the article, in an engaging and conversational tone.
+    Below sections should be present in the article, but you as an expert would decide on adding any additional sections based on the flow and the information you have.
+    - Introduction
+    - General overview
+    - Key facts, statistics and figures
+    - Relevant findings
+    - Conclusion
+    - References
+    - FAQ's
+  expected_output: >
+    Synthesized and detailed information from the websites into a full fledged news article in markdown format. 
+    Make sure to add context and background information to the article, in brief at the beginning of the article.
+    Do not make up any information, only use the information you find in the websites. 
+    If you can't find any information, just say that you couldn't find any information.
+    Always add disclaimer at the end of the article that the information is for educational purposes only and not for any investment or medical advice.
+  agent: ai_news_writer
+
+file_writer_task:
+  description: >
+    Write the news article to a file
+  expected_output: >
+    A well written news article with all information from the previous task into a file named news/{topic}_news_article_{date}.md.
+  agent: file_writer 
