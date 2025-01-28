@@ -2,54 +2,80 @@
 
 Welcome to the Mynews Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
+## Prerequisites
+
+- Python >=3.10 <3.13
+- OpenAI API key
+  
 ## Installation
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
-
-First, if you haven't already, install uv:
-
+1. Clone the repository:
 ```bash
-pip install uv
+git clone https://github.com/yourusername/mynews-crew.git
+cd mynews-crew
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
+2. Install project dependencies:
 ```bash
 crewai install
 ```
-### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+1. Set up environment variables:
+   - Create a `.env` file in the root directory
+   - Add your OpenAI API key:
+     ```
+     OPENAI_API_KEY=your_api_key_here
+     ```
 
-- Modify `src/mynews/config/agents.yaml` to define your agents
-- Modify `src/mynews/config/tasks.yaml` to define your tasks
-- Modify `src/mynews/crew.py` to add your own logic, tools and specific args
-- Modify `src/mynews/main.py` to add custom inputs for your agents and tasks
+## Configuration
+
+The project uses YAML files for configuration:
+
+- `src/mynews/config/agents.yaml`: Define AI agents and their properties
+- `src/mynews/config/tasks.yaml`: Define tasks for the agents to perform
+- `src/mynews/crew.py`: Customize logic, tools, and arguments
+- `src/mynews/main.py`: Configure custom inputs for agents and tasks
 
 ## Running the Project
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
+1. From the project root directory, run:
 ```bash
-$ crewai run
+crewai run
 ```
 
-This command initializes the myNews Crew, assembling the agents and assigning them tasks as defined in your configuration.
+1. The system will generate a "News Article in the folder "news" file containing the AI agents' research on LLMs.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+## Project Structure
+
+```
+mynews/
+├── src/
+│   └── mynews/
+│       ├── config/
+│       │   ├── agents.yaml
+│       │   └── tasks.yaml
+│       ├── crew.py
+│       └── main.py
+├── .env
+└── README.md
+```
+
+## Output
+
+The default configuration will generate a `News Article.md` file in the "news directory containing research on specific topic. You can customize the output by modifying the task configurations in `tasks.yaml`.
+
+## Support
+
+Need help? Here are some resources:
+- [Official Documentation](https://docs.crewai.com)
+- [GitHub Repository](https://github.com/joaomdmoura/crewai)
+- [Discord Community](https://discord.com/invite/X4JWnZnxPb)
+- [Documentation Chat](https://chatg.pt/DWjSBZn)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Understanding Your Crew
 
 The myNews Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the Mynews Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
-# Agentic_AI_News_Crew
